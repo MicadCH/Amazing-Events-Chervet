@@ -1,0 +1,23 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 1%;
+}
+
+.div-form{
+    width: 50%;
+}
+
+
+.btn-send {
+    background-color: #e9e2eb;
+    font-weight: bold;
+    color: rgb(168, 77, 141);
+    border-color: rgb(139, 83, 125);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #b4a2b4;
+    --bs-btn-hover-border-color: none;
+  }
