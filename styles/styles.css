@@ -5,7 +5,8 @@
 }
 
 /*---------------------------- NAVBAR ----------------------------*/
-.btn-nav {
+.btn-nav,
+.btn-nav2 {
   background-color: #e9e2eb;
   font-weight: bold;
   color: rgb(168, 77, 141);
@@ -14,7 +15,13 @@
   --bs-btn-hover-bg: #b4a2b4;
   --bs-btn-hover-border-color: none;
 }
-
+.btn-nav2 {
+  /*BOTON CUANDO ESTÁ EN LA PÁG*/
+  border-style: dashed;
+  border-width: 2px;
+  border-color: rgb(139 83 125 / 41%);
+  --bs-btn-hover-border-color:#b4a2b4;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -97,7 +104,7 @@
   margin-right: 3%;
 }
 
-/*---------------------------- CARTAs ----------------------------*/
+/*---------------------------- CARTAS ----------------------------*/
 .CARTAS {
   margin-top: 4%;
   display: flex;
@@ -117,6 +124,15 @@
 .card-body {
   display: grid;
   justify-items: center;
+}
+
+.card-img-top {
+  width: 287px;
+  height: 147px;
+}
+
+.card-text {
+  text-align: center;
 }
 
 /*---------------------------- FOOTER ----------------------------*/
