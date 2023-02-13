@@ -1,0 +1,23 @@
+table {
+  width: 55%;
+  margin: 4%;
+  margin-left: 24%;
+  border: 5px solid rgb(223, 183, 213);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  border: 2px solid rgb(223, 183, 213);
+  border-collapse: collapse;
+  text-align: left;
+  padding: 0.5%;
+}
+
+thead {
+  font-weight: bold;
+}
+
+.head-td{
+    background-color: rgb(238, 233, 237);
+}
