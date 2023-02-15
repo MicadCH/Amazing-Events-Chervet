@@ -1,0 +1,77 @@
+/*---------- NAV ---------*/
+@media screen and (max-width: 800px) {
+  .primerLogo {
+    text-align: center;
+  }
+}
+
+/*---------- BUSCAR ----------*/
+@media screen and (max-width: 1500px) {
+  .buscar {
+    margin-top: -4.5%;
+  }
+  .form-inline {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .buscar {
+    margin-top: -6.5%;
+  }
+  .form-inline {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .buscar {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+  }
+  .form-inline {
+    width: 50%;
+  }
+}
+
+/* CARTAS */
+@media screen and (max-width: 1200px) {
+  .CARTAS {
+    justify-content: space-between;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .CARTAS {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin-bottom: 1%;
+  }
+}
+
+/*---------- CONTACT ----------*/
+@media screen and (max-width: 800px) {
+  .container-form {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+/*---------- FOOTER ----------*/
+@media screen and (max-width: 1500px) {
+  .img-footer {
+    width: 4%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .img-footer {
+    width: 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .img-footer {
+    width: 8%;
+  }
+}
