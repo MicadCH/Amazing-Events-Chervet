@@ -241,11 +241,6 @@ console.log("userArray", infoUsers);
 
 for(let i=0; i<infoUsers.length; i++){
   console.log(
-    `El usuario ${infoUsers[i].name}
-     con el username "${infoUsers[i].username}",
-     tiene el email: ${infoUsers[i].email},
-     su número de telefono es: ${infoUsers[i].phone},
-     y viven en la ciudad de ${infoUsers[i].address.city},
-     en la calle ${infoUsers[i].address.street}`
+    `El usuario "${infoUsers[i].name}" con el username "${infoUsers[i].username}", tiene el email: ${infoUsers[i].email}. Su número de telefono es: ${infoUsers[i].phone}, y vive en la ciudad de ${infoUsers[i].address.city}, en la calle ${infoUsers[i].address.street}.`
   )  
 };
