@@ -1,246 +1,204 @@
-const infoUsers = [
+const infoEvent = [
   {
-    id: 1,
-    name: "Leanne Graham",
-    username: "Bret",
-    email: "Sincere@april.biz",
-    address: {
-      street: "Kulas Light",
-      suite: "Apt. 556",
-      city: "Gwenborough",
-      zipcode: "92998-3874",
-      geo: {
-        lat: "-37.3159",
-        lng: "81.1496",
-      },
-    },
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
-    company: {
-      name: "Romaguera-Crona",
-      catchPhrase: "Multi-layered client-server neural-net",
-      bs: "harness real-time e-markets",
-    },
+    _id: 1,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Feriadecomidas7.jpg",
+    name: "Collectivities Party",
+    date: "2021-12-12",
+    description:
+      "Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
+    category: "Food Fair",
+    place: "Room A",
+    capacity: 45000,
+    assistance: 42756,
+    price: 5,
   },
   {
-    id: 2,
-    name: "Ervin Howell",
-    username: "Antonette",
-    email: "Shanna@melissa.tv",
-    address: {
-      street: "Victor Plains",
-      suite: "Suite 879",
-      city: "Wisokyburgh",
-      zipcode: "90566-7771",
-      geo: {
-        lat: "-43.9509",
-        lng: "-34.4618",
-      },
-    },
-    phone: "010-692-6593 x09125",
-    website: "anastasia.net",
-    company: {
-      name: "Deckow-Crist",
-      catchPhrase: "Proactive didactic contingency",
-      bs: "synergize scalable supply-chains",
-    },
+    _id: 2,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Feriadecomidas2.jpg",
+    name: "Korean style",
+    date: "2022-08-12",
+    description:
+      "Enjoy the best Korean dishes, with international chefs and awesome events.",
+    category: "Food Fair",
+    place: "Room A",
+    capacity: 45000,
+    assistance: 42756,
+    price: 10,
   },
   {
-    id: 3,
-    name: "Clementine Bauch",
-    username: "Samantha",
-    email: "Nathan@yesenia.net",
-    address: {
-      street: "Douglas Extension",
-      suite: "Suite 847",
-      city: "McKenziehaven",
-      zipcode: "59590-4157",
-      geo: {
-        lat: "-68.6102",
-        lng: "-47.0653",
-      },
-    },
-    phone: "1-463-123-4447",
-    website: "ramiro.info",
-    company: {
-      name: "Romaguera-Jacobson",
-      catchPhrase: "Face to face bifurcated interface",
-      bs: "e-enable strategic applications",
-    },
+    _id: 3,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo5.jpg",
+    name: "Jurassic Park",
+    date: "2021-11-02",
+    description:
+      "Let's go meet the biggest dinosaurs in the paleontology museum.",
+    category: "Museum",
+    place: "Field",
+    capacity: 82000,
+    assistance: 65892,
+    price: 15,
   },
   {
-    id: 4,
-    name: "Patricia Lebsack",
-    username: "Karianne",
-    email: "Julianne.OConner@kory.org",
-    address: {
-      street: "Hoeger Mall",
-      suite: "Apt. 692",
-      city: "South Elvis",
-      zipcode: "53919-4257",
-      geo: {
-        lat: "29.4572",
-        lng: "-164.2990",
-      },
-    },
-    phone: "493-170-9623 x156",
-    website: "kale.biz",
-    company: {
-      name: "Robel-Corkery",
-      catchPhrase: "Multi-tiered zero tolerance productivity",
-      bs: "transition cutting-edge web services",
-    },
+    _id: 4,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo1.jpg",
+    name: "Parisian Museum",
+    date: "2022-11-02",
+    description:
+      "A unique tour in the city of lights, get to know one of the most iconic places.",
+    category: "Museum",
+    place: "Paris",
+    capacity: 8200,
+    estimate: 8200,
+    price: 3500,
   },
   {
-    id: 5,
-    name: "Chelsey Dietrich",
-    username: "Kamren",
-    email: "Lucio_Hettinger@annie.ca",
-    address: {
-      street: "Skiles Walks",
-      suite: "Suite 351",
-      city: "Roscoeview",
-      zipcode: "33263",
-      geo: {
-        lat: "-31.8129",
-        lng: "62.5342",
-      },
-    },
-    phone: "(254)954-1289",
-    website: "demarco.info",
-    company: {
-      name: "Keebler LLC",
-      catchPhrase: "User-centric fault-tolerant solution",
-      bs: "revolutionize end-to-end systems",
-    },
+    _id: 5,
+    image:
+      "https://amazingeventsapi.herokuapp.com/api/img/Fiestadedisfraces2.jpg",
+    name: "Comicon",
+    date: "2021-02-12",
+    description:
+      "For comic lovers, all your favourite characters gathered in one place.",
+    category: "Costume Party",
+    place: "Room C",
+    capacity: 120000,
+    assistance: 110000,
+    price: 54,
   },
   {
-    id: 6,
-    name: "Mrs. Dennis Schulist",
-    username: "Leopoldo_Corkery",
-    email: "Karley_Dach@jasper.info",
-    address: {
-      street: "Norberto Crossing",
-      suite: "Apt. 950",
-      city: "South Christy",
-      zipcode: "23505-1337",
-      geo: {
-        lat: "-71.4197",
-        lng: "71.7478",
-      },
-    },
-    phone: "1-477-935-8478 x6430",
-    website: "ola.org",
-    company: {
-      name: "Considine-Lockman",
-      catchPhrase: "Synchronised bottom-line interface",
-      bs: "e-enable innovative applications",
-    },
+    _id: 6,
+    image:
+      "https://amazingeventsapi.herokuapp.com/api/img/Fiestadedisfraces1.jpg",
+    name: "Halloween Night",
+    date: "2022-02-12",
+    description: "Come with your scariest costume and win incredible prizes.",
+    category: "Costume Party",
+    place: "Room C",
+    capacity: 12000,
+    estimate: 9000,
+    price: 12,
   },
   {
-    id: 7,
-    name: "Kurtis Weissnat",
-    username: "Elwyn.Skiles",
-    email: "Telly.Hoeger@billy.biz",
-    address: {
-      street: "Rex Trail",
-      suite: "Suite 280",
-      city: "Howemouth",
-      zipcode: "58804-1099",
-      geo: {
-        lat: "24.8918",
-        lng: "21.8984",
-      },
-    },
-    phone: "210.067.6132",
-    website: "elvis.io",
-    company: {
-      name: "Johns Group",
-      catchPhrase: "Configurable multimedia task-force",
-      bs: "generate enterprise e-tailers",
-    },
+    _id: 7,
+    image:
+      "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica1.jpg",
+    name: "Metallica in concert",
+    date: "2022-01-22",
+    description: "The only concert of the most emblematic band in the world.",
+    category: "Music Concert",
+    place: "Room A",
+    capacity: 138000,
+    estimate: 138000,
+    price: 150,
   },
   {
-    id: 8,
-    name: "Nicholas Runolfsdottir V",
-    username: "Maxime_Nienow",
-    email: "Sherwood@rosamond.me",
-    address: {
-      street: "Ellsworth Summit",
-      suite: "Suite 729",
-      city: "Aliyaview",
-      zipcode: "45169",
-      geo: {
-        lat: "-14.3990",
-        lng: "-120.7677",
-      },
-    },
-    phone: "586.493.6943 x140",
-    website: "jacynthe.com",
-    company: {
-      name: "Abernathy Group",
-      catchPhrase: "Implemented secondary concept",
-      bs: "e-enable extensible e-tailers",
-    },
+    _id: 8,
+    image:
+      "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica2.jpg",
+    name: "Electronic Fest",
+    date: "2021-01-22",
+    description:
+      "The best national and international DJs gathered in one place.",
+    category: "Music Concert",
+    place: "Room A",
+    capacity: 138000,
+    assistance: 110300,
+    price: 250,
   },
   {
-    id: 9,
-    name: "Glenna Reichert",
-    username: "Delphine",
-    email: "Chaim_McDermott@dana.io",
-    address: {
-      street: "Dayna Park",
-      suite: "Suite 449",
-      city: "Bartholomebury",
-      zipcode: "76495-3109",
-      geo: {
-        lat: "24.6463",
-        lng: "-168.8889",
-      },
-    },
-    phone: "(775)976-6794 x41206",
-    website: "conrad.com",
-    company: {
-      name: "Yost and Sons",
-      catchPhrase: "Switchable contextually-based project",
-      bs: "aggregate real-time technologies",
-    },
+    _id: 9,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Maraton3.jpg",
+    name: "10K for life",
+    date: "2021-03-01",
+    description: "Come and exercise, improve your health and lifestyle.",
+    category: "Race",
+    place: "Soccer field",
+    capacity: 30000,
+    assistance: 25698,
+    price: 3,
   },
   {
-    id: 10,
-    name: "Clementina DuBuque",
-    username: "Moriah.Stanton",
-    email: "Rey.Padberg@karina.biz",
-    address: {
-      street: "Kattie Turnpike",
-      suite: "Suite 198",
-      city: "Lebsackbury",
-      zipcode: "31428-2261",
-      geo: {
-        lat: "-38.2386",
-        lng: "57.2232",
-      },
-    },
-    phone: "024-648-3804",
-    website: "ambrose.net",
-    company: {
-      name: "Hoeger LLC",
-      catchPhrase: "Centralized empowering task-force",
-      bs: "target end-to-end models",
-    },
+    _id: 10,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Maraton1.jpg",
+    name: "15K NY",
+    date: "2022-03-01",
+    description:
+      "We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.",
+    category: "Race",
+    place: "New York",
+    capacity: 3000000,
+    assistance: 2569800,
+    price: 3,
+  },
+  {
+    _id: 11,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Libros7.jpg",
+    name: "School's book fair",
+    date: "2022-10-15",
+    description: "Bring your unused school book and take the one you need.",
+    category: "Book Exchange",
+    place: "Room D1",
+    capacity: 150000,
+    estimate: 123286,
+    price: 1,
+  },
+  {
+    _id: 12,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Libros3.jpg",
+    name: "Just for your kitchen",
+    date: "2021-11-09",
+    description:
+      "If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.",
+    category: "Book Exchange",
+    place: "Room D6",
+    capacity: 130000,
+    assistance: 90000,
+    price: 100,
+  },
+  {
+    _id: 13,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Cine3.jpg",
+    name: "Batman",
+    date: "2021-3-11",
+    description: "Come see Batman fight crime in Gotham City.",
+    category: "Cinema",
+    place: "Room D1",
+    capacity: 11000,
+    assistance: 9300,
+    price: 225,
+  },
+  {
+    _id: 14,
+    image: "https://amazingeventsapi.herokuapp.com/api/img/Cine7.jpg",
+    name: "Avengers",
+    date: "2022-10-15",
+    description:
+      "Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
+    category: "Cinema",
+    place: "Room D1",
+    capacity: 9000,
+    estimate: 9000,
+    price: 250,
   },
 ];
 
+// for (let i = 0; i < infoEvent.length; i++) {
+//   console.log(
+//     `• ID Event: ${infoEvent[i]._id}, • Event category: ${infoEvent[i].category}.
+//     • "${infoEvent[i].description}".
+//     The event: "${infoEvent[i].name}" will be held on the date of ${infoEvent[i].date} in ${infoEvent[i].place}. This place has a capacity of ${infoEvent[i].capacity} people, of which it is estimated that ${infoEvent[i].estimate} will attend.`
+//   );
+// }
 
-console.log("userArray", infoUsers);
-
-// for - palabra reservada
-// () - condicion
-// {} - bloque de código
-// i = iterador
-
-for(let i=0; i<infoUsers.length; i++){
+for (let i = 0; i < infoEvent.length; i++) {
   console.log(
-    `El usuario "${infoUsers[i].name}" con el username "${infoUsers[i].username}", tiene el email: ${infoUsers[i].email}. Su número de telefono es: ${infoUsers[i].phone}, y vive en la ciudad de ${infoUsers[i].address.city}, en la calle ${infoUsers[i].address.street}.`
-  )  
-};
+    `• ID Event: ${infoEvent[i]._id}, • Event category: ${infoEvent[i].category}.
+    - Name Event: ${infoEvent[i].name}.
+    - "${infoEvent[i].description}".
+    - Date: ${infoEvent[i].date}
+    - Place: ${infoEvent[i].place}.
+    - Entrance Ticket Price: ${infoEvent[i].price}.
+    - People Capacity: ${infoEvent[i].capacity}.
+    - Sales Estimate: ${infoEvent[i].estimate}.`
+  )
+}
