@@ -172,8 +172,8 @@
   height: 50px;
   background-color: white;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: -3%
+  justify-content: space-around;
+  margin-bottom: -1%
 }
 
 .awesonfoot:hover {
@@ -191,17 +191,17 @@
 }
 
 .p-card {
-  background-color: #8f6088;
+  background-color: #b3b3b3;
   text-align: center;
   padding: 10px;
   margin-right: 20%;
-  color: aliceblue;
-  border-radius: 6px;
   margin-left: 20%;
+  color: aliceblue;
+  border-radius: 6px;  
 }
 
 .s-card {
-  margin: 3%;
+  margin: 1%;
 }
 
 .card-title {
