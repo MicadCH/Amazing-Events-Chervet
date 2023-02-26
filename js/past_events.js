@@ -1,6 +1,5 @@
 const fechaBase = eventos.currentDate;
 const pasados = [];
-
 function passed(arreglo) {
     for (let i of eventos.events) {
         if (i.date < fechaBase) {

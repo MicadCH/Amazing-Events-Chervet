@@ -1,6 +1,5 @@
 const fechaBase = eventos.currentDate;
 const e = eventos.events;
-
 const todos = [];
 function probando(arreglo) {
     for (let i of e) {
