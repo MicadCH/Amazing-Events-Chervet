@@ -180,7 +180,6 @@
   color: white;
 }
 
-
 .btn-card {
   font-weight: bold;
   color: rgb(168, 77, 141);
@@ -191,58 +190,24 @@
   background: rgb(212, 189, 206);
 }
 
-.p-card{
+.p-card {
   background-color: #8f6088;
-    text-align: center;
-    padding: 10px;
-    margin-right: 20%;
-    color: aliceblue;
-    border-radius: 6px;
-    margin-left: 20%;
+  text-align: center;
+  padding: 10px;
+  margin-right: 20%;
+  color: aliceblue;
+  border-radius: 6px;
+  margin-left: 20%;
 }
 
-
-.s-card{
+.s-card {
   margin: 3%;
 }
 
-.card-title{
+.card-title {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*---------------------------- CARTAS ----------------------------*/
-/* .CARTAS {
-  margin-top: 4%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-
-
-.card-body {
-  display: grid;
-  justify-items: center;
-}
-
-.card-img-top {
-  width: 287px;
-  height: 147px;
-}
-
-.card-text {
-  text-align: center;
-} */
 
 /*---------------------------- FOOTER ----------------------------*/
 

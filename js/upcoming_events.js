@@ -11,7 +11,7 @@ function upcoming(arreglo) {
 }
 upcoming(futuros);
 
-/* pruebas con tarjetas*/
+/*--- TARJETAS PRUEBAS ---*/
 
 tarjetas = armadoGaleria(tarjetas, futuros);
 contenedorTarjetas.innerHTML = tarjetas;

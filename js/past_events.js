@@ -13,7 +13,7 @@ function passed(arreglo) {
 }
 passed(pasados);
 
-/* pruebas con tarjetas*/
+/*--- TARJETAS PRUEBAS ---*/
 
 tarjetas = armadoGaleria(tarjetas, pasados);
 console.log(pasados);
