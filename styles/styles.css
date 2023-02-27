@@ -10,7 +10,7 @@
   background-color: #e9e2eb;
   font-weight: bold;
   color: rgb(168, 77, 141);
-  border-color: rgb(139, 83, 125);
+border: none;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #b4a2b4;
   --bs-btn-hover-border-color: none;
@@ -18,7 +18,7 @@
 
 .btn-nav2 {
   /*BOTON CUANDO ESTÁ EN LA PÁG*/
-  border-style: dashed;
+  border-style: solid;
   border-width: 2px;
   border-color: rgb(139 83 125 / 41%);
   --bs-btn-hover-border-color: #b4a2b4;
