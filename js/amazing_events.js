@@ -489,6 +489,8 @@ const eventos = {
 const contenedorTarjetas = document.getElementById("galeria");
 let tarjetas = '';
 function armadoGaleria(cadena, array) {
+    
+    cadena = '';
     for (const uno of array) {
 
 
@@ -498,6 +500,7 @@ function armadoGaleria(cadena, array) {
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${uno.name}</h5>
+                            <h5 class="card-category">Category: ${uno.category}</h5>
                             <p class="card-text">${uno.description}</p>
                         </div>
                         <div class="card-footer px-2">
