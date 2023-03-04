@@ -15,5 +15,4 @@ passed(pasados);
 /*--- TARJETAS PRUEBAS ---*/
 
 tarjetas = armadoGaleria(tarjetas, pasados);
-console.log(pasados);
 contenedorTarjetas.innerHTML = tarjetas;

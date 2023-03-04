@@ -18,7 +18,15 @@ window.onscroll = function () {
 
 }
 
-filter = function($event) {
+
+
+
+
+
+
+
+
+filter = function ($event) {
     //ESTOS EVENTOS VIENEN DEL onchange QUE ESTA EN CADA ELEMENTO CHECKBOX (INDEX HTML)
     // para saber si un checkbox esta tildado o no, uso $event.checked
     // para saber el valor de cada checkbox, lo busco con $event.value, y ese valor viene del HTML que dice value="Food" por ej
@@ -65,6 +73,6 @@ filter = function($event) {
         tarjetas = armadoGaleria(tarjetas, eventos.events);
         // aplico el string innerTHML a mi pagina
         contenedorTarjetas.innerHTML = tarjetas;
-    }
-    
+    } 
+
 }
