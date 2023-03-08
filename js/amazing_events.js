@@ -517,9 +517,7 @@ function armadoGaleria(array) {
                         <div class="card-body">
                             <h5 class="card-title">${uno.name}</h5>
                             <p class="card-text">${uno.description}</p>
-                            <p class="card-category">Category: ${uno.category}</p>
-                            <p class="card-date">Date: ${uno.date}</p>
-                           
+                                                       
                         </div>
                         <div class="card-footer px-2">
                         <span class="s-card">Price: $ ${uno.price}</span>
