@@ -1,4 +1,4 @@
-const eventos = {
+let eventos = {
   currentDate: "2022-09-01",
   events: [
     {
@@ -516,8 +516,7 @@ function armadoGaleria(array) {
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${uno.name}</h5>
-                            <p class="card-text">${uno.description}</p>
-                                                       
+                            <p class="card-text">${uno.description}</p>                                                       
                         </div>
                         <div class="card-footer px-2">
                         <span class="s-card">Price: $ ${uno.price}</span>

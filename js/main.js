@@ -24,3 +24,5 @@ for (let i of eventos.events) {
   if (!categorias.includes(i.category)) categorias.push(i.category);
 }
 console.log(categorias);
+
+
