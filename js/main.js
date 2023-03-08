@@ -1,7 +1,7 @@
 const fechaBase = eventos.currentDate;
 const e = eventos.events;
 const todos = [];
-function probando(arreglo) {
+function agregandoTarjetas(arreglo) {
     for (let i of e) {
         if (i.date < fechaBase) {
 
@@ -12,7 +12,7 @@ function probando(arreglo) {
     }
     return arreglo;
 }
-probando(todos);
+agregandoTarjetas(todos);
 
 /*--- TARJETAS PRUEBAS ---*/
 
