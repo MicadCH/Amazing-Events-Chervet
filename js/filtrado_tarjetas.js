@@ -1,4 +1,4 @@
-filter = function ($event) {
+filter = function ($event, events) {
   if ($event.checked) {
     filtros.push($event.value);
   } else {
@@ -11,14 +11,13 @@ filter = function ($event) {
     var tarjetasFiltered = [];
 
     for (var filtro of filtros) {
-      for (var item of eventos.events.filter((x) => x.category === filtro)) {
+      for (var item of events.filter((x) => x.category === filtro)) {
         tarjetasFiltered.push(item);
       }
     }
-    var stringHTML = armadoGaleria(tarjetas, tarjetasFiltered);
+    var stringHTML = armadoGaleria(tarjetasFiltered);
     contenedorTarjetas.innerHTML = stringHTML;
   } else {
-    tarjetas = armadoGaleria(tarjetas, eventos.events);
-    contenedorTarjetas.innerHTML = tarjetas;
+    contenedorTarjetas.innerHTML = armadoGaleria(events);
   }
 };

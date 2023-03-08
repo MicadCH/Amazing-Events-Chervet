@@ -1,17 +1,17 @@
 const fechaBase = eventos.currentDate;
-const futuros = [];
-function upcoming(arreglo) {
-    for (let i of eventos.events) {
-        if (i.date > fechaBase) {
-            arreglo.push(i);
-        }
+
+function passed() {
+  let pasados = [];
+  for (let i of eventos.events) {
+    if (i.date > fechaBase) {
+
+      pasados.push(i);
     }
-    return arreglo;
-
+  }
+  return pasados;
 }
-upcoming(futuros);
+const filtradoFuturo = passed();
+contenedorTarjetas.innerHTML = armadoGaleria(filtradoFuturo);
 
-/*--- TARJETAS PRUEBAS ---*/
 
-tarjetas = armadoGaleria(tarjetas, futuros);
-contenedorTarjetas.innerHTML = tarjetas;
+//cambiar nombre xD

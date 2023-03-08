@@ -1,30 +1,26 @@
 const fechaBase = eventos.currentDate;
 const e = eventos.events;
-const todos = [];
-function agregandoTarjetas(arreglo) {
-    for (let i of e) {
-        if (i.date < fechaBase) {
 
-            i.description = `<p class="p-card">Finished </p> `;
-
-        }
-        arreglo.unshift(i);
+function agregandoTarjetas() {
+  let todos = [];
+  for (let i of e) {
+    if (i.date < fechaBase) {
+      i.description = `<p class="p-card">Finished </p> `;
     }
-    return arreglo;
+    todos.unshift(i);
+  }
+  return todos;
 }
-agregandoTarjetas(todos);
 
 /*--- TARJETAS PRUEBAS ---*/
 
-tarjetas = armadoGaleria(tarjetas, todos);
-contenedorTarjetas.innerHTML = tarjetas;
-
+const agregoTarjetas = agregandoTarjetas();
+contenedorTarjetas.innerHTML = armadoGaleria(agregoTarjetas);
 
 /*--- CONSOLE.LOG CATEGORIAS ---*/
 
 const categorias = [];
 for (let i of eventos.events) {
-    if (!categorias.includes(i.category))
-        categorias.push(i.category);
+  if (!categorias.includes(i.category)) categorias.push(i.category);
 }
-console.log(categorias)
+console.log(categorias);

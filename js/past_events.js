@@ -1,16 +1,15 @@
 const fechaBase = eventos.currentDate;
-const pasados = [];
 
-function passed(arreglo) {
+function passed() {
+  let pasados = [];
   for (let i of eventos.events) {
     if (i.date < fechaBase) {
       i.description = `<p class="p-card">Finished </p> `;
-      arreglo.push(i);
+      pasados.push(i);
     }
   }
-  return arreglo;
+  return pasados;
 }
-passed(pasados);
 
-tarjetas = armadoGaleria(tarjetas, pasados);
-contenedorTarjetas.innerHTML = tarjetas;
+const filtradoPasado = passed();
+contenedorTarjetas.innerHTML = armadoGaleria(filtradoPasado);
