@@ -506,26 +506,3 @@ let eventos = {
 };
 
 let  datosEventos = eventos.events;
-
-
-// const contenedorTarjetas = document.getElementById("galeria");
-
-// function armadoGaleria(array) {
-//   let cadena = "";
-//   for (const uno of array) {
-//     cadena += `<div class="col-12 col-md-5 col-lg-3 card" >
-//                         <div class="card-header">
-//                             <img src="${uno.image}" class="card-img-top" alt="${uno.name}">
-//                         </div>
-//                         <div class="card-body">
-//                             <h5 class="card-title">${uno.name}</h5>
-//                             <p class="card-text">${uno.description}</p>                                                       
-//                         </div>
-//                         <div class="card-footer px-2">
-//                         <span class="s-card">Price: $ ${uno.price}</span>
-//                             <a href="./details.html?id=${uno._id}" class="btn btn-outline-secondary btn-card">Details</a>
-//                         </div>
-//                 </div>`;
-//   }
-//   return cadena;
-// }

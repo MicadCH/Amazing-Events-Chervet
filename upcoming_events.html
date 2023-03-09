@@ -56,50 +56,28 @@
     </div>
   </div>
 
+
   <!---------------------------- CHECKBOX ---------------------------->
+
   <div class="border-fset">
-    <fieldset class="fset">
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-food" value="Food" onchange="filter(this, filtradoFuturo)">
-        Food
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-museum" value="Museum" onchange="filter(this, filtradoFuturo)">
-        Museum
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-concert" value="Concert" onchange="filter(this, filtradoFuturo)">
-        Concert
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-race" value="Race" onchange="filter(this, filtradoFuturo)">
-        Race
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-books" value="Books" onchange="filter(this, filtradoFuturo)">
-        Books
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-cinema" value="Cinema" onchange="filter(this, filtradoFuturo)">
-        Cinema
-      </label>
-      <label class="label">
-        <input class="input" type="checkbox" name="Position" id="checkbox-party" value="Party" onchange="filter(this, filtradoFuturo)">
-        Party
-      </label>
-    </fieldset>
+    <fieldset class="fset" id="container-check"></fieldset>
   </div>
 
 
   <!---------------------------- BUSCAR ---------------------------->
+
+
   <div class="buscar">
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="searcher" aria-label="Search" id="buscador">
       <button class="btn btn-outline-secondary btn-nav my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 
+
   <!---------------------------- JS GALERIA ---------------------------->
+
+
   <div class="container-fluid  galeria " id="galeria"></div>
 
 
@@ -125,9 +103,12 @@
 
   <!---------------------------- LINK JS ---------------------------->
   <script src="./js/amazing_events.js"></script>
+  
   <script src="./js/upcoming_events.js"></script>
-  <script src="./js/boton_arriba.js"></script>
+
   <script src="./js/filtrado_tarjetas.js"></script>
+  
+  <script src="./js/boton_arriba.js"></script>
 </body>
 
 </html>
