@@ -25,7 +25,7 @@ divDetails.innerHTML = ` <div class="row d-flex align-items-center">
                                         <p class="d-flex align-items-center">Place: ${detallesEvento.place}</p>
                                         <p class="d-flex align-items-center">Capacity: ${detallesEvento.capacity}</p>
                                         <p class="d-flex align-items-center">Price: $${detallesEvento.price}</p>
-                                        <a href="./index.html"><button type="button" class="btn btn-outline-secondary btn-nav">Back</button></a>
+                                        <a href="./index.html"><button type="button" class="btn btn-outline-secondary btn-card-det">Back</button></a>
                                     </div>
                                 </div>                                
                             </div>

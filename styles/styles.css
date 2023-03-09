@@ -10,7 +10,7 @@
   background-color: #e9e2eb;
   font-weight: bold;
   color: rgb(168, 77, 141);
-border: none;
+  border: none;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #b4a2b4;
   --bs-btn-hover-border-color: none;
@@ -44,11 +44,11 @@ border: none;
 }
 
 /*---------------------------- BOTON ACTIVO ---------------------------- */
-.btn-check:checked+.btn,
+.btn-check:checked + .btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check)+.btn:active {
+:not(.btn-check) + .btn:active {
   color: var(--bs-btn-active-color);
   background-color: #8b748f;
   border-color: #896e83;
@@ -157,7 +157,6 @@ border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .card-header img {
@@ -173,7 +172,7 @@ border: none;
   background-color: white;
   display: flex;
   justify-content: space-around;
-  margin-bottom: -1%
+  margin-bottom: -1%;
 }
 
 .awesonfoot:hover {
@@ -183,11 +182,13 @@ border: none;
 .btn-card {
   font-weight: bold;
   color: rgb(168, 77, 141);
-  border-color: rgb(160, 96, 142);
+  border: none;
+  /* border-color: rgb(160, 96, 142); */
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #b69fb9;
   --bs-btn-hover-border-color: none;
   background: rgb(212, 189, 206);
+  padding-bottom: 7%;
 }
 
 .p-card {
@@ -197,7 +198,7 @@ border: none;
   margin-right: 20%;
   margin-left: 20%;
   color: aliceblue;
-  border-radius: 6px;  
+  border-radius: 6px;
 }
 
 .s-card {
@@ -207,7 +208,6 @@ border: none;
 .card-title {
   text-align: center;
 }
-
 
 /*---------------------------- FOOTER ----------------------------*/
 
@@ -221,7 +221,7 @@ border: none;
   margin-right: 1%;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
-  transition: 0.50s;
+  transition: 0.5s;
 }
 
 .img-footer:hover {
@@ -234,10 +234,9 @@ border: none;
   margin-bottom: 0;
 }
 
-
 /*---------------------------- BOTON ARRIBA ----------------------------*/
 
-#button-up{
+#button-up {
   width: 50px;
   height: 50px;
   background: #b08dc4;
@@ -256,18 +255,28 @@ border: none;
   transform: scale(0);
 }
 
-#button-up:hover{
+#button-up:hover {
   transform: scale(1.1);
-  border-color: rgba(0,0,0,0.1);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
-/*--details--*/
-.card-detail{
+/*DETAILS*/
+.card-detail {
   max-width: 800px;
   border: solid 3px #d11174;
 }
 
-.img-detail{
+.img-detail {
   height: 200px;
   object-fit: cover;
+}
+
+.btn-card-det {
+  border: none;
+  font-weight: bold;
+  color: rgb(168, 77, 141);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b69fb9;
+  --bs-btn-hover-border-color: none;
+  background: rgb(212, 189, 206);
 }
