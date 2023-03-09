@@ -1,3 +1,7 @@
+const fechaBase = eventos.currentDate;
+let dataInput = "";
+let arrayUpcoming = [];
+
 const categoriasCheck = document.getElementById("container-check");
 const searchbar = document.getElementById("buscador");
 const categorysfilter = datosEventos.map((eventos) => eventos.category);
@@ -29,7 +33,7 @@ categoriasCheck.addEventListener("click", (e) => {
       (noCheckeado) => noCheckeado !== e.target.value
     );
   }
-  console.log(almacenaCheck);
+
   render();
 });
 
@@ -45,9 +49,27 @@ searchbar.addEventListener("keyup", (s) => {
 
 //muestra las cartas
 
-function createcards(array) {
+
+function upcoming() {
+  for (let i of datosEventos) {
+      if (i.date > fechaBase) {
+          arrayUpcoming.push(i);
+      }
+  }   return arrayUpcoming;  
+}
+upcoming();
+
+
+
+function createcardsUpcoming(array) {
+  upcomingEvents = array.filter((e) => e.date > datosFecha);
+
+  console.log(upcomingEvents);
+  console.log(array.date);
+  console.log(datosFecha);
+
   let cadena = "";
-  for (const uno of array) {
+  for (let uno of upcomingEvents) {
     cadena += `<div class="col-12 col-md-5 col-lg-3 card" >
                         <div class="card-header">
                             <img src="${uno.image}" class="card-img-top" alt="${uno.name}">
@@ -63,35 +85,36 @@ function createcards(array) {
                 </div>`;
   }
   return cadena;
+  
 }
 
 function render() {
   let filtradorCheck = datosEventos.filter((c) =>
     almacenaCheck.includes(c.category)
   );
-  console.log(filtradorCheck);
+
   let filtroBusqueda = datosEventos.filter(
     (s) =>
       s.category.toLowerCase().includes(escucha) ||
       s.name.toLocaleLowerCase().includes(escucha)
   );
-  console.log(filtroBusqueda);
+
   if (filtroBusqueda.length > 0) {
-    galeria.innerHTML = createcards(filtroBusqueda);
+    galeria.innerHTML = createcardsUpcoming(filtroBusqueda);
     let controlador = filtroBusqueda.filter((fb) =>
       fb.category.includes(almacenaCheck.toString())
     );
-    galeria.innerHTML = createcards(controlador);
+    galeria.innerHTML = createcardsUpcoming(controlador);
   } else if (filtroBusqueda.length == 0) {
     galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
   }
   if (filtradorCheck.length > 0) {
-    galeria.innerHTML = createcards(filtradorCheck);
+    galeria.innerHTML = createcardsUpcoming(filtradorCheck);
     let cfinal = filtradorCheck.filter((fc) =>
       fc.name.toLowerCase().includes(escucha.toString())
     );
-    galeria.innerHTML = createcards(cfinal);
-  }
+    galeria.innerHTML = createcardsUpcoming(cfinal);
+  } 
 }
-
+createcardsUpcoming(datosEventos);
 render();

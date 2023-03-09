@@ -1,9 +1,3 @@
-
-
-////////////////
-
-
-
 const fechaBase = eventos.currentDate;
 let dataInput = "";
 let arrayPast = [];
