@@ -105,7 +105,7 @@ function render() {
       fb.category.includes(almacenaCheck.toString())
     );
     galeria.innerHTML = createcardsUpcoming(controlador);
-  } else if (filtroBusqueda.length == 0) {
+  } else if (filtroBusqueda.length === 0) {
     galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
   }
   if (filtradorCheck.length > 0) {
