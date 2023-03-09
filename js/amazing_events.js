@@ -506,3 +506,4 @@ let eventos = {
 };
 
 let  datosEventos = eventos.events;
+let datosFecha = eventos.currentDate;

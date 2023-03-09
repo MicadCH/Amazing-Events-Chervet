@@ -1,5 +1,12 @@
+
+
+////////////////
+
+
+
 const fechaBase = eventos.currentDate;
-let dataInput = ""
+let dataInput = "";
+let arrayPast = [];
 
 const categoriasCheck = document.getElementById("container-check");
 const searchbar = document.getElementById("buscador");
@@ -32,7 +39,7 @@ categoriasCheck.addEventListener("click", (e) => {
       (noCheckeado) => noCheckeado !== e.target.value
     );
   }
-  console.log(almacenaCheck);
+
   render();
 });
 
@@ -48,9 +55,25 @@ searchbar.addEventListener("keyup", (s) => {
 
 //muestra las cartas
 
-function createcards(array) {
 
-    pastEvents = array.filter(e =>e.date < eventsCDate)
+function passed() {
+  for (let i of datosEventos) {
+      if (i.date < fechaBase) {
+          arrayPast.push(i);
+      }
+  }
+  return arrayPast;
+}
+passed();
+
+
+
+function createcardsPast(array) {
+  pastEvents = array.filter((e) => e.date < datosFecha);
+
+  console.log(pastEvents);
+  console.log(array.date);
+  console.log(datosFecha);
 
   let cadena = "";
   for (let uno of pastEvents) {
@@ -68,36 +91,36 @@ function createcards(array) {
                         </div>
                 </div>`;
   }
+  return cadena;
 }
-
 
 function render() {
   let filtradorCheck = datosEventos.filter((c) =>
     almacenaCheck.includes(c.category)
   );
-  console.log(filtradorCheck);
+
   let filtroBusqueda = datosEventos.filter(
     (s) =>
       s.category.toLowerCase().includes(escucha) ||
       s.name.toLocaleLowerCase().includes(escucha)
   );
-  console.log(filtroBusqueda);
+
   if (filtroBusqueda.length > 0) {
-    galeria.innerHTML = createcards(filtroBusqueda);
+    galeria.innerHTML = createcardsPast(filtroBusqueda);
     let controlador = filtroBusqueda.filter((fb) =>
       fb.category.includes(almacenaCheck.toString())
     );
-    galeria.innerHTML = createcards(controlador);
+    galeria.innerHTML = createcardsPast(controlador);
   } else if (filtroBusqueda.length == 0) {
     galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
   }
   if (filtradorCheck.length > 0) {
-    galeria.innerHTML = createcards(filtradorCheck);
+    galeria.innerHTML = createcardsPast(filtradorCheck);
     let cfinal = filtradorCheck.filter((fc) =>
       fc.name.toLowerCase().includes(escucha.toString())
     );
-    galeria.innerHTML = createcards(cfinal);
+    galeria.innerHTML = createcardsPast(cfinal);
   }
 }
-
+createcardsPast(datosEventos);
 render();

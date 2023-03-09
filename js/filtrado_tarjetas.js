@@ -43,7 +43,7 @@ searchbar.addEventListener("keyup", (s) => {
   render();
 });
 
-//muestra las cartas
+//crea las cartas
 
 function createcards(array) {
   let cadena = "";
