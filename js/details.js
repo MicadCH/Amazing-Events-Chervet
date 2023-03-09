@@ -1,8 +1,11 @@
-const queryString = location.search;
+const queryString = location.search
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const detallesEvento = eventos.events.find((events) => events._id == id);
+console.log(id);
+
+let detallesEvento = eventos.events.find((event) => event._id == id);
+console.log(detallesEvento);
 
 const divDetails = document.getElementById("divDetails");
 
@@ -18,12 +21,11 @@ divDetails.innerHTML = ` <div class="row d-flex align-items-center">
                                     <h2 class="text-center">${detallesEvento.name}</h2>
                                     <div class="description">
                                         <p class="text-justify">${detallesEvento.description}</p>
-                                        <p class="d-flex align-items-center">${dateIcon} Date: ${detallesEvento.date}</p>
-                                        <p class="d-flex align-items-center">${locationIcon} Place: ${detallesEvento.place}</p>
-                                        <p class="d-flex align-items-center">${userIcon} Capacity: ${detallesEvento.capacity}</p>
-                                        <p class="d-flex align-items-center">${tagIcon} Price: $${detallesEvento.price}</p>
+                                        <p class="d-flex align-items-center">Date: ${detallesEvento.date}</p>
+                                        <p class="d-flex align-items-center">Place: ${detallesEvento.place}</p>
+                                        <p class="d-flex align-items-center">Capacity: ${detallesEvento.capacity}</p>
+                                        <p class="d-flex align-items-center">Price: $${detallesEvento.price}</p>
                                     </div>
-                                </div>
-                                
+                                </div>                                
                             </div>
                         </div>`;

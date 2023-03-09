@@ -1,1 +1,0 @@
-//ia no aguanto mas este sufrimiento llamado "no me sale lo del filtro"

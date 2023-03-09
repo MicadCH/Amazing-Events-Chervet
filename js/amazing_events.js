@@ -520,7 +520,7 @@ function armadoGaleria(array) {
                         </div>
                         <div class="card-footer px-2">
                         <span class="s-card">Price: $ ${uno.price}</span>
-                            <a href="./details.html" class="btn btn-outline-secondary btn-card">Details</a>
+                            <a href="./details.html?id=${uno._id}" class="btn btn-outline-secondary btn-card">Details</a>
                         </div>
                 </div>`;
   }
