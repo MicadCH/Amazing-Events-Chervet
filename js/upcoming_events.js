@@ -11,7 +11,7 @@ function passed() {
   return pasados;
 }
 const filtradoFuturo = passed();
-contenedorTarjetas.innerHTML = armadoGaleria(filtradoFuturo);
+contenedorTarjetas.innerHTML = createcards(filtradoFuturo);
 
 
 //cambiar nombre xD

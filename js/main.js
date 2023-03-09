@@ -1,28 +1,28 @@
-const fechaBase = eventos.currentDate;
-const e = eventos.events;
+// const fechaBase = eventos.currentDate;
+// const e = eventos.events;
 
-function agregandoTarjetas() {
-  let todos = [];
-  for (let i of e) {
-    if (i.date < fechaBase) {
-      i.description = `<p class="p-card">Finished </p> `;
-    }
-    todos.unshift(i);
-  }
-  return todos;
-}
+// function agregandoTarjetas() {
+//   let todos = [];
+//   for (let i of e) {
+//     if (i.date < fechaBase) {
+//       i.description = `<p class="p-card">Finished </p> `;
+//     }
+//     todos.unshift(i);
+//   }
+//   return todos;
+// }
 
-/*--- TARJETAS PRUEBAS ---*/
+// /*--- TARJETAS PRUEBAS ---*/
 
-const agregoTarjetas = agregandoTarjetas();
-contenedorTarjetas.innerHTML = armadoGaleria(agregoTarjetas);
+// const agregoTarjetas = agregandoTarjetas();
+// galeria.innerHTML = armadoGaleria(agregoTarjetas);
 
-/*--- CONSOLE.LOG CATEGORIAS ---*/
+// /*--- CONSOLE.LOG CATEGORIAS ---*/
 
-const categorias = [];
-for (let i of eventos.events) {
-  if (!categorias.includes(i.category)) categorias.push(i.category);
-}
-console.log(categorias);
+// const categorias = [];
+// for (let i of eventos.events) {
+//   if (!categorias.includes(i.category)) categorias.push(i.category);
+// }
+// console.log(categorias);
 
 

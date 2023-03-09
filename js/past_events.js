@@ -12,4 +12,4 @@ function passed() {
 }
 
 const filtradoPasado = passed();
-contenedorTarjetas.innerHTML = armadoGaleria(filtradoPasado);
+contenedorTarjetas.innerHTML = createcards(filtradoPasado);

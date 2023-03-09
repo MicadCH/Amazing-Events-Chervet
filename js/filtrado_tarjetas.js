@@ -1,168 +1,97 @@
-filter = function ($event, events) {
-  if ($event.checked) {
-    filtros.push($event.value);
-  } else {
-    if (filtros.length > 0) {
-      var index = filtros.findIndex((x) => x === $event.value);
-      filtros.splice(index, 1);
-    }
+const categoriasCheck = document.getElementById("container-check");
+const searchbar = document.getElementById("buscador");
+const categorysfilter = datosEventos.map((eventos) => eventos.category);
+const galeria = document.getElementById("galeria");
+const category = categorysfilter.reduce((c, e) => {
+  if (!c.includes(e)) {
+    c.push(e);
   }
-  if (filtros.length > 0) {
-    var tarjetasFiltered = [];
+  return c;
+}, []);
 
-    for (var filtro of filtros) {
-      for (var item of events.filter((x) => x.category === filtro)) {
-        tarjetasFiltered.push(item);
-      }
-    }
-    var stringHTML = armadoGaleria(tarjetasFiltered);
-    contenedorTarjetas.innerHTML = stringHTML;
-  } else {
-    contenedorTarjetas.innerHTML = armadoGaleria(events);
+function crearCategorias(evento) {
+  let eventoCategoria = "";
+  for (x of evento) {
+    eventoCategoria += `  <label class="label">
+    <input class="input" type="checkbox" name="${x}" id="${x}" value="${x}">${x}</label>`;
   }
-};
+  categoriasCheck.innerHTML = eventoCategoria;
+}
+crearCategorias(category);
 
+let almacenaCheck = [];
 
+categoriasCheck.addEventListener("click", (e) => {
+  if (e.target.checked) {
+    almacenaCheck.push(e.target.value);
+  } else {
+    almacenaCheck = almacenaCheck.filter(
+      (noCheckeado) => noCheckeado !== e.target.value
+    );
+  }
+  console.log(almacenaCheck);
+  render();
+});
 
-/////////////////////////////////////////////////////////////
+/// funcion curzada
 
+/// barra busqueda
 
+let escucha = "";
+searchbar.addEventListener("keyup", (s) => {
+  escucha = s.target.value.toLowerCase();
+  render();
+});
 
-// checkedRefe.addEventListener("click",(e) => {
+//muestra las cartas
 
-//   if(e.target.attributes.class.nodeValue === "checkbox"){
+function createcards(array) {
+  let cadena = "";
+  for (const uno of array) {
+    cadena += `<div class="col-12 col-md-5 col-lg-3 card" >
+                        <div class="card-header">
+                            <img src="${uno.image}" class="card-img-top" alt="${uno.name}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${uno.name}</h5>
+                            <p class="card-text">${uno.description}</p>                                                       
+                        </div>
+                        <div class="card-footer px-2">
+                        <span class="s-card">Price: $ ${uno.price}</span>
+                            <a href="./details.html?id=${uno._id}" class="btn btn-outline-secondary btn-card">Details</a>
+                        </div>
+                </div>`;
+  }
+  return cadena;
+}
 
-//     if(e.target.checked){
-//       checkedCategories.push(e.target.value);
-//       //createCheckedCategoryCards(checkedCategories);
-//       //paintAllCards();
-//     }
-//     else{
-//       let index = checkedCategories.indexOf(e.target.value);
-//       let x = checkedCategories.splice(index, 1);
-//       //createCheckedCategoryCards(checkedCategories);
-//       //paintAllCards();
-//     }
+function render() {
+  let filtradorCheck = datosEventos.filter((c) =>
+    almacenaCheck.includes(c.category)
+  );
+  console.log(filtradorCheck);
+  let filtroBusqueda = datosEventos.filter(
+    (s) =>
+      s.category.toLowerCase().includes(escucha) ||
+      s.name.toLocaleLowerCase().includes(escucha)
+  );
+  console.log(filtroBusqueda);
+  if (filtroBusqueda.length > 0) {
+    galeria.innerHTML = createcards(filtroBusqueda);
+    let controlador = filtroBusqueda.filter((fb) =>
+      fb.category.includes(almacenaCheck.toString())
+    );
+    galeria.innerHTML = createcards(controlador);
+  } else if (filtroBusqueda.length == 0) {
+    galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
+  }
+  if (filtradorCheck.length > 0) {
+    galeria.innerHTML = createcards(filtradorCheck);
+    let cfinal = filtradorCheck.filter((fc) =>
+      fc.name.toLowerCase().includes(escucha.toString())
+    );
+    galeria.innerHTML = createcards(cfinal);
+  }
+}
 
-//     filterAlmacen();
-//   }
-//   //if(checkedCategories.length === 0){
-//   //createAllCards(eventsDB.events);
-//   //paintAllCards();
-//   //}
-
-// })
-
-// function paintCategories(){
-//   allCategoriesContainer.innerHTML = allCategoriesHTML;
-// }
-
-// //Home events cards display functions:
-
-// function createAllCards(arr) {
-//   allCards="";
-
-//   for (event_ of arr) {
-//     allCards += 
-//     `<div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 cardCont">
-//       <div class="card">
-//         <img src="${event_.image}">
-//         <div class="card-body">
-//           <h5 class="card-title">${event_.name}</h5>
-//           <p class="card-text">${event_.description}</p>
-//           <div class="cardFooter">
-//             <p>Price: $${event_.price}</p>
-//             <a href="./details.html" class="btn btn-primary card-btn">More Info</a>
-//           </div>
-//         </div>
-//       </div>
-//     </div>`;
-    
-//   }
-//   return allCards;
-// }
-
-// function paintAllCards(){
-//   allCardsContainer.innerHTML = allCards;
-// }
-
-// //Filter fx:
-// function filtraPorNombre(nombre,eventos){
-//   let lista = [];
-
-//   for(event_ of eventos){
-
-//     if(event_.name.toLowerCase().includes(nombre)){
-//       lista.push(event_);
-//       // console.log(nombre);
-//       // console.log(event_.name);
-//       // console.log("condicion del if " + event_.name.includes(nombre));
-//     }
-
-//   }
-//   // console.log(lista);
-//   return lista;
-// }
-
-
-
-
-// // function checkboxFilter(lista, evento){
-// //   let lista = [];
-
-// //   for(event_ of evento){
-// //     if(evento.category.toLowerCase().includes(lista)){
-
-// //     }
-// //   }
-// // }
-
-// search.addEventListener("keyup", (e) =>{
-//   // if(checkedCategories.length === 0){
-//   //   createAllCards(filtraPorNombre(search.value.toLowerCase(), eventsDB.events));
-//   //   paintAllCards();
-//   // }else{
-//   //   createAllCards(filtraPorNombre(search.value.toLowerCase(), checkedEvents));
-//   //   paintAllCards();
-//   // }
-//   listenerValue = e.target.value;
-//   filterAlmacen();
-// });
-
-// function filterAlmacen(){
-//   let filtradoPorSearchbar = events.filter(e => e.name.toLowerCase().includes(listenerValue));
-//   let filtradoPorCheckbar = events.filter(e => checkedCategories.includes(e.category));
-  
-//   // console.log(filtradoPorSearchbar);
-//   // console.log(filtradoPorCheckbar);
-//   // console.log(filtradoPorCheckbar.forEach());
-//   // console.log(events);
-//   // console.log(checkedCategories);
-
-//   if(listenerValue.length > 0){
-//     // createAllCards(filtradoPorSearchbar);
-//     // paintAllCards();
-//     allCardsContainer.innerHTML = createAllCards(filtradoPorSearchbar);
-//     let controlFinal = filtradoPorSearchbar.filter(fs => fs.category.includes(checkedCategories.toString()));
-//     allCardsContainer.innerHTML = createAllCards(controlFinal);
-//   }else if(listenerValue.length == 0){
-//     allCardsContainer.innerHTML = createAllCards(events);
-//   }
-//   if(checkedCategories.length > 0){
-//     allCardsContainer.innerHTML = createAllCards(filtradoPorCheckbar);
-//     let controlFinal2 = filtradoPorCheckbar.filter(fs => fs.name.toLowerCase().includes(listenerValue.toString()));
-//     allCardsContainer.innerHTML = createAllCards(controlFinal2);
-//     console.log(controlFinal2);
-//   }
-
-
-// }
-
-// //Calling the functions:
-
-// createAllCards(events);
-// paintAllCards();
-
-// createNoRepeatCategories();
-// paintCategories();
-
+render();
