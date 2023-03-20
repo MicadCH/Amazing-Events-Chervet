@@ -1,3 +1,8 @@
+// const url = "https://mindhub-xj03.onrender.com/api/amazing"
+// fetch(url)
+
+
+
 let eventos = {
   currentDate: "2022-09-01",
   events: [
@@ -504,6 +509,3 @@ let eventos = {
     },
   ],
 };
-
-// let  datosEventos = eventos.events;
-// let datosFecha = eventos.currentDate;
