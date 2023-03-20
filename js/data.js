@@ -505,5 +505,5 @@ let eventos = {
   ],
 };
 
-let  datosEventos = eventos.events;
-let datosFecha = eventos.currentDate;
+// let  datosEventos = eventos.events;
+// let datosFecha = eventos.currentDate;

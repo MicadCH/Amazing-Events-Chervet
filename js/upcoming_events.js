@@ -1,6 +1,8 @@
 const fechaBase = eventos.currentDate;
 let dataInput = "";
 let arrayUpcoming = [];
+let datosEventos = eventos.events;
+let datosFecha = eventos.currentDate;
 
 const categoriasCheck = document.getElementById("container-check");
 const searchbar = document.getElementById("buscador");
@@ -49,17 +51,15 @@ searchbar.addEventListener("keyup", (s) => {
 
 //muestra las cartas
 
-
 function upcoming() {
   for (let i of datosEventos) {
-      if (i.date > fechaBase) {
-          arrayUpcoming.push(i);
-      }
-  }   return arrayUpcoming;  
+    if (i.date > fechaBase) {
+      arrayUpcoming.push(i);
+    }
+  }
+  return arrayUpcoming;
 }
 upcoming();
-
-
 
 function createcardsUpcoming(array) {
   upcomingEvents = array.filter((e) => e.date > datosFecha);
@@ -85,7 +85,6 @@ function createcardsUpcoming(array) {
                 </div>`;
   }
   return cadena;
-  
 }
 
 function render() {
@@ -114,7 +113,7 @@ function render() {
       fc.name.toLowerCase().includes(escucha.toString())
     );
     galeria.innerHTML = createcardsUpcoming(cfinal);
-  } 
+  }
 }
 createcardsUpcoming(datosEventos);
 render();

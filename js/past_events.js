@@ -1,6 +1,8 @@
 const fechaBase = eventos.currentDate;
 let dataInput = "";
 let arrayPast = [];
+let datosEventos = eventos.events;
+let datosFecha = eventos.currentDate;
 
 const categoriasCheck = document.getElementById("container-check");
 const searchbar = document.getElementById("buscador");
@@ -49,18 +51,15 @@ searchbar.addEventListener("keyup", (s) => {
 
 //muestra las cartas
 
-
 function passed() {
   for (let i of datosEventos) {
-      if (i.date < fechaBase) {
-          arrayPast.push(i);
-      }
+    if (i.date < fechaBase) {
+      arrayPast.push(i);
+    }
   }
   return arrayPast;
 }
 passed();
-
-
 
 function createcardsPast(array) {
   pastEvents = array.filter((e) => e.date < datosFecha);
