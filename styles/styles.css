@@ -107,6 +107,12 @@
   margin-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+  color: #b69fb9;
+  font-size: 2.3vh;
+  font-style: oblique;
+  font-weight: bolder;
+  /* -webkit-text-stroke-width: thin; */
+  -webkit-text-stroke-color: rgb(168, 77, 141);
 }
 
 .label {
