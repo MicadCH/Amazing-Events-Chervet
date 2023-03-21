@@ -1,3 +1,28 @@
+// NO ME SALE LA API :(
+
+
+// const url = "https://mindhub-xj03.onrender.com/api/amazing";
+// fetch(url)
+//   .then((response) => response.json())
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     datosEventos = response.events;
+//     datosFecha = response.currentDate;
+//     const categoriasCheck = document.getElementById("container-check");
+//     const searchbar = document.getElementById("buscador");
+//     const categorysfilter = datosEventos.map((eventos) => eventos.category);
+//     const galeria = document.getElementById("galeria");
+//     const category = categorysfilter.reduce((c, e) => {
+//       if (!c.includes(e)) {
+//         c.push(e);
+//       }
+
+
+
+
+
 let datosEventos = eventos.events;
 let datosFecha = eventos.currentDate;
 
@@ -57,7 +82,7 @@ function createcards(array) {
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${uno.name}</h5>
-                            <p class="card-text">${uno.description}</p>                                                       
+                            <p class="card-text">${uno.description}</p>
                         </div>
                         <div class="card-footer px-2">
                         <span class="s-card">Price: $ ${uno.price}</span>
@@ -99,3 +124,10 @@ function render() {
 
 render();
 
+
+// INTENTO DE HACER LA API
+
+// crearCategorias(category)
+// render()
+// })
+// .catch(error => console.log(error))

@@ -1,8 +1,25 @@
-// const url = "https://mindhub-xj03.onrender.com/api/amazing"
+// const url = "https://mindhub-xj03.onrender.com/api/amazing";
 // fetch(url)
+//   .then((response) => response.json())
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.error("There was a problem fetching the data:", error);
+//   });
 
 
 
+
+
+
+  
 let eventos = {
   currentDate: "2022-09-01",
   events: [

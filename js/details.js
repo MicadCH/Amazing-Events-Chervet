@@ -1,18 +1,3 @@
-// const url = "https://mindhub-xj03.onrender.com/api/amazing"
-// fetch(url)
-// .then(res => res.json())
-// .then(dato => {
-//     let events = dato.events
-//     let eventCategory = events.map(ecategory => ecategory.category)
-//     let filtByCategory = eventCategory.reduce0((a,e) => {
-//         if(!a.includes(e)){
-//             a.push(e)
-//         }
-//         return a
-//     })},
-//     [])
-
-
 const queryString = location.search
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
