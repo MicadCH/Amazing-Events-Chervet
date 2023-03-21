@@ -61,8 +61,7 @@ fetch(url)
     //--------------------------------------------------------------------------------//
 
     const upCEvents = events
-      .filter((ev) => ev.date > currentDate)
-      .map((ev) => {
+      .filter((ev) => ev.date > currentDate).map((ev) => {
         return {
           name: ev.name,
           category: ev.category,

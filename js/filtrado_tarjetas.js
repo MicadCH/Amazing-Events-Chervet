@@ -8,7 +8,7 @@ async function traerLosDatos() {
 
     let datosEventos = eventos.events;
     let datosFecha = eventos.datosFecha;
-    indexInitializer(datosEventos, datosFecha);
+     inicializadorIndex (datosEventos, datosFecha);
   } catch (error) {
     console.log(error);
   }
@@ -16,11 +16,15 @@ async function traerLosDatos() {
 
 traerLosDatos();
 
-function indexInitializer(datosEventos, datosFecha) {
+function  inicializadorIndex (datosEventos, datosFecha) {
   const categoriasCheck = document.getElementById("container-check");
   const searchbar = document.getElementById("buscador");
   const categorysfilter = datosEventos.map((eventos) => eventos.category);
   const galeria = document.getElementById("galeria");
+
+  let notFound = `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
+  <img src="./assets/error-404.png" class="img-404" alt="">
+  <span>Sorry, we couldn't find what you were looking for.</span></div>`;
 
   const category = categorysfilter.reduce((c, e) => {
     if (!c.includes(e)) {
@@ -82,7 +86,7 @@ function indexInitializer(datosEventos, datosFecha) {
                         </div>
                 </div>`;
     }
-    return cadena;
+    return cadena == "" ? notFound : cadena;
   }
 
   function render() {
@@ -102,11 +106,11 @@ function indexInitializer(datosEventos, datosFecha) {
         fb.category.includes(almacenaCheck.toString())
       );
       galeria.innerHTML = createcards(controlador);
-    } else if (filtroBusqueda.length == 0) {
-      galeria.innerHTML = 
-      `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
-      <img src="./assets/error-404.png" class="img-404" alt="">
-      <span>Sorry, we couldn't find what you were looking for.</span></div>`;
+    } else if (filtroBusqueda.length === 0) {
+      galeria.innerHTML = (notFound);
+      // `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
+      // <img src="./assets/error-404.png" class="img-404" alt="">
+      // <span>Sorry, we couldn't find what you were looking for.</span></div>`;
     }
     if (filtradorCheck.length > 0) {
       galeria.innerHTML = createcards(filtradorCheck);
@@ -118,4 +122,4 @@ function indexInitializer(datosEventos, datosFecha) {
   }
 
   render();
-} //CIERRO  "function indexInitializer(allEvents, currentDate) {"
+} //CIERRO  "function  inicializadorIndex (allEvents, currentDate) {"

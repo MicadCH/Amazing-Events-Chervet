@@ -12,7 +12,7 @@ async function traerLosDatos() {
 
     datosEventos = eventos.events;
     datosFecha = eventos.currentDate;
-    upcomingEventsInicializador();
+    inicializadorUpcoming ();
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +20,7 @@ async function traerLosDatos() {
 
 traerLosDatos();
 
-function upcomingEventsInicializador() {
+function inicializadorUpcoming () {
   const categoriasCheck = document.getElementById("container-check");
 
   const searchbar = document.getElementById("buscador");
@@ -130,17 +130,19 @@ function upcomingEventsInicializador() {
       );
       galeria.innerHTML = createcardsUpcoming(controlador);
     } else if (filtroBusqueda.length === 0) {
-      galeria.innerHTML =
-      `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
-      <img src="./assets/error-404.png" class="img-404" alt="">
-      <span>Sorry, we couldn't find what you were looking for.</span></div>`;
+      galeria.innerHTML = (notFound);
+      // `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
+      // <img src="./assets/error-404.png" class="img-404" alt="">
+      // <span>Sorry, we couldn't find what you were looking for.</span></div>`;
     }
     if (filtradorCheck.length > 0) {
       galeria.innerHTML = createcardsUpcoming(filtradorCheck);
-      let cfinal = filtradorCheck.filter((fc) =>
-        fc.name.toLowerCase().includes(escucha.toString())
+      let cfinal = filtradorCheck.filter((fc) => fc.name.toLowerCase().includes(escucha.toString())
       );
       galeria.innerHTML = createcardsUpcoming(cfinal);
+    }
+    if (filtradorCheck.length = 0) {
+      galeria.innerHTML = (notFound);
     }
   }
   createcardsUpcoming(datosEventos);

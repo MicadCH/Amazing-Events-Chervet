@@ -12,7 +12,7 @@ async function traerLosDatos() {
 
     datosEventos = eventos.events;
     datosFecha = eventos.currentDate;
-    pastEventsInicializador();
+    inicializadorPast ();
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +20,7 @@ async function traerLosDatos() {
 
 traerLosDatos();
 
-function pastEventsInicializador() {
+function inicializadorPast () {
   let categoriasCheck = document.getElementById("container-check");
 
   let searchbar = document.getElementById("buscador");
@@ -28,6 +28,10 @@ function pastEventsInicializador() {
   let categorysfilter = datosEventos.map((eventos) => eventos.category);
 
   let galeria = document.getElementById("galeria");
+
+  let notFound = `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
+  <img src="./assets/error-404.png" class="img-404" alt="">
+  <span>Sorry, we couldn't find what you were looking for.</span></div>`;
 
   let category = categorysfilter.reduce((c, e) => {
     if (!c.includes(e)) {
@@ -105,7 +109,7 @@ function pastEventsInicializador() {
                         </div>
                 </div>`;
     }
-    return cadena;
+   return cadena == "" ? notFound : cadena;
   }
 
   function render() {
@@ -125,11 +129,11 @@ function pastEventsInicializador() {
         fb.category.includes(almacenaCheck.toString())
       );
       galeria.innerHTML = createcardsPast(controlador);
-    } else if (filtroBusqueda.length == 0) {
-      galeria.innerHTML = 
-      `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
-      <img src="./assets/error-404.png" class="img-404" alt="">
-      <span>Sorry, we couldn't find what you were looking for.</span></div>`;
+    } else if (filtroBusqueda.length === 0) {
+      galeria.innerHTML = (notFound);
+      // `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
+      // <img src="./assets/error-404.png" class="img-404" alt="">
+      // <span>Sorry, we couldn't find what you were looking for.</span></div>`;
     }
     if (filtradorCheck.length > 0) {
       galeria.innerHTML = createcardsPast(filtradorCheck);
@@ -137,6 +141,9 @@ function pastEventsInicializador() {
         fc.name.toLowerCase().includes(escucha.toString())
       );
       galeria.innerHTML = createcardsPast(cfinal);
+    }
+    if (filtradorCheck.length = 0) {
+      galeria.innerHTML = (notFound);
     }
   }
   galeria.innerHTML = createcardsPast(datosEventos);
