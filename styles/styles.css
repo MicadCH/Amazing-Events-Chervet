@@ -150,7 +150,9 @@
   margin: 10px 0px;
   margin-right: 10px;
   padding: 10px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 9px 9px 3px -3px rgb(0 0 0 / 19%);
+  border-color: #b69fb9;
+  border-width: revert;
 }
 
 .card {
@@ -215,6 +217,12 @@
   text-align: center;
 }
 
+.text-center {
+  text-align: center !important;
+  text-shadow: 3px 2px 2px rgb(0 0 0 / 19%);
+  color: #c34f91;
+}
+
 /*---------------------------- FOOTER ----------------------------*/
 
 .div-img-footer {
@@ -269,7 +277,10 @@
 /*DETAILS*/
 .card-detail {
   max-width: 800px;
-  border: solid 3px #d11174;
+  border: solid 3px;
+  box-shadow: 9px 9px 3px -3px rgb(0 0 0 / 19%);
+  border-color: #b69fb9;
+  border-width: revert;
 }
 
 .img-detail {
