@@ -104,7 +104,7 @@ function indexInitializer(datosEventos, datosFecha) {
       galeria.innerHTML = createcards(controlador);
     } else if (filtroBusqueda.length == 0) {
       galeria.innerHTML = 
-      `<div class="img-error-texto" style="display: grid; text-align: center;">
+      `<div class="img-error-texto" style="display: grid; text-align: center; justify-items: center;">
       <img src="./assets/error-404.png" class="img-404" alt="">
       <span>Sorry, we couldn't find what you were looking for.</span></div>`;
     }

@@ -280,3 +280,12 @@
   --bs-btn-hover-border-color: none;
   background: rgb(212, 189, 206);
 }
+
+/*Texto Error 404*/
+.img-error-texto {
+  color: #b69fb9;
+  font-size: 4vh;
+  font-style: oblique;
+  -webkit-text-stroke-width: thin;
+  -webkit-text-stroke-color: rgb(168, 77, 141);
+}
