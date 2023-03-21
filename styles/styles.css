@@ -43,8 +43,6 @@
   transform: scale(90%);
 }
 
-
-
 /*---------------------------- BOTON ACTIVO ---------------------------- */
 .btn-check:checked + .btn,
 .btn.active,
@@ -278,7 +276,7 @@
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-/*DETAILS*/
+/*---------------DETAILS----------*/
 .card-detail {
   max-width: 800px;
   border: solid 3px;
@@ -302,7 +300,7 @@
   background: rgb(212, 189, 206);
 }
 
-/*Texto Error 404*/
+/*------------Texto Error 404-------------*/
 .img-error-texto {
   color: #b69fb9;
   font-size: 4vh;
@@ -329,3 +327,23 @@
   background-color: #fff;
 }
 
+/*---------STATS------*/
+th {
+  color: rgb(180 72 148);
+}
+
+#th-titulo{
+  background-color: rgb(0 0 0 / 6%);
+}
+
+#columna-1{
+  background-color: #f6f6f6
+}
+
+#columna-2{
+  background-color: #e7e7e7
+}
+
+#columna-3{
+  background-color: #dcd9d9;
+}

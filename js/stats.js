@@ -32,29 +32,29 @@ fetch(url)
     firstTable.innerHTML = ` 
     <thead>
         <tr>
-            <th colspan="3">Events statistics</th>
+            <th colspan="3" id="th-titulo" id="th-titulo">Events statistics</th>
         </tr>
         <tr>
-            <th>Events with the highest percentage of attendance</th>
-            <th>Events with the lowest percentage of attendance</th>
-            <th>Event with larger capacity</th>
+            <th id="columna-1">Events with the highest percentage of attendance</th>
+            <th id="columna-2">Events with the lowest percentage of attendance</th>
+            <th id="columna-3">Event with larger capacity</th>
         </tr>
     </thead>
     <tbody id="firstTable">
         <tr>
-            <td>${asistOrder[0]}</td>
-            <td>${latestEvents[2]}</td>
-            <td>${capacityOrder[0]}</td>
+            <td id="columna-1">${asistOrder[0]}</td>
+            <td id="columna-2">${latestEvents[2]}</td>
+            <td id="columna-3">${capacityOrder[0]}</td>
         </tr>
         <tr>
-            <td>${asistOrder[1]}</td>
-            <td>${latestEvents[1]}</td>
-            <td>${capacityOrder[1]}</td>
+            <td id="columna-1">${asistOrder[1]}</td>
+            <td id="columna-2">${latestEvents[1]}</td>
+            <td id="columna-3">${capacityOrder[1]}</td>
         </tr>
         <tr>
-            <td>${asistOrder[2]}</td>
-            <td>${latestEvents[0]}</td>
-            <td>${capacityOrder[2]}</td>
+            <td id="columna-1">${asistOrder[2]}</td>
+            <td id="columna-2">${latestEvents[0]}</td>
+            <td id="columna-3">${capacityOrder[2]}</td>
         </tr>
     </tbody>
     `;
@@ -160,44 +160,44 @@ fetch(url)
     secondTable.innerHTML = `
         <thead>
             <tr>
-                <th colspan="3">Upcoming Events Statistics by Category</th>
+                <th colspan="3" id="th-titulo" id="th-titulo">Upcoming Events Statistics by Category</th>
             </tr>
             <tr>
-                <th>Categories</th>
-                <th>Revenues</th>
-                <th>Percentage of attendance</th>
+                <th id="columna-1" id="columna-1">Categories</th>
+                <th id="columna-2">Revenues</th>
+                <th id="columna-3">Percentage of attendance</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>${concert[0]}</td>
-                <td>$ ${concert[1]}</td>
-                <td>${concert[2]}%</td>
+                <td id="columna-1">${concert[0]}</td>
+                <td id="columna-2">$ ${concert[1]}</td>
+                <td id="columna-3">${concert[2]}%</td>
             </tr>
             <tr>
-                <td>${race[0]}</td>
-                <td>$ ${race[1]}</td>
-                <td>${race[2]}%</td>
+                <td id="columna-1">${race[0]}</td>
+                <td id="columna-2">$ ${race[1]}</td>
+                <td id="columna-3">${race[2]}%</td>
             </tr>
             <tr>
-                <td>${party[0]}</td>
-                <td>$ ${party[1]}</td>
-                <td>${party[2]}%</td>
+                <td id="columna-1">${party[0]}</td>
+                <td id="columna-2">$ ${party[1]}</td>
+                <td id="columna-3">${party[2]}%</td>
             </tr>
             <tr>
-                <td>${food[0]}</td>
-                <td>$ ${food[1]}</td>
-                <td>${food[2]}%</td>
+                <td id="columna-1">${food[0]}</td>
+                <td id="columna-2">$ ${food[1]}</td>
+                <td id="columna-3">${food[2]}%</td>
             </tr>
             <tr>
-                <td>${book[0]}</td>
-                <td>$ ${book[1]}</td>
-                <td>${book[2]}%</td>
+                <td id="columna-1">${book[0]}</td>
+                <td id="columna-2">$ ${book[1]}</td>
+                <td id="columna-3">${book[2]}%</td>
             </tr>
             <tr>
-                <td>${museum[0]}</td>
-                <td>$ ${museum[1]}</td>
-                <td>${museum[2]}%</td>
+                <td id="columna-1">${museum[0]}</td>
+                <td id="columna-2">$ ${museum[1]}</td>
+                <td id="columna-3">${museum[2]}%</td>
             </tr>
         </tbody>
     `;
@@ -319,49 +319,49 @@ fetch(url)
     thirdTable.innerHTML = `
     <thead>
         <tr>
-            <th colspan="3">Past Eventes Statistics by Sategory</th>
+            <th colspan="3" id="th-titulo">Past Eventes Statistics by Sategory</th>
         </tr>
         <tr>
-            <th>Categories</th>
-            <th>Revenues</th>
-            <th>Percentage of attendance</th>
+            <th id="columna-1">Categories</th>
+            <th id="columna-2">Revenues</th>
+            <th id="columna-3">Percentage of attendance</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>${pasconcert[0]}</td>
-            <td>$ ${pasconcert[1]}</td>
-            <td>${pasconcert[2]}%</td>
+            <td id="columna-1">${pasconcert[0]}</td>
+            <td id="columna-2">$ ${pasconcert[1]}</td>
+            <td id="columna-3">${pasconcert[2]}%</td>
         </tr>
         <tr>
-            <td>${pasrace[0]}</td>
-            <td>$ ${pasrace[1]}</td>
-            <td>${pasrace[2]}%</td>
+            <td id="columna-1">${pasrace[0]}</td>
+            <td id="columna-2">$ ${pasrace[1]}</td>
+            <td id="columna-3">${pasrace[2]}%</td>
         </tr>
         <tr>
-            <td>${pasfood[0]}</td>
-            <td>$ ${pasfood[1]}</td>
-            <td>${pasfood[2]}%</td>
+            <td id="columna-1">${pasfood[0]}</td>
+            <td id="columna-2">$ ${pasfood[1]}</td>
+            <td id="columna-3">${pasfood[2]}%</td>
         </tr>
         <tr>
-            <td>${pasparty[0]}</td>
-            <td>$ ${pasparty[1]}</td>
-            <td>${pasparty[2]}%</td>
+            <td id="columna-1">${pasparty[0]}</td>
+            <td id="columna-2">$ ${pasparty[1]}</td>
+            <td id="columna-3">${pasparty[2]}%</td>
         </tr>
         <tr>
-            <td>${pasbook[0]}</td>
-            <td>$ ${pasbook[1]}</td>
-            <td>${pasbook[2]}%</td>
+            <td id="columna-1">${pasbook[0]}</td>
+            <td id="columna-2">$ ${pasbook[1]}</td>
+            <td id="columna-3">${pasbook[2]}%</td>
         </tr>
         <tr>
-            <td>${pasmuseum[0]}</td>
-            <td>$ ${pasmuseum[1]}</td>
-            <td>${pasmuseum[2]}%</td>
+            <td id="columna-1">${pasmuseum[0]}</td>
+            <td id="columna-2">$ ${pasmuseum[1]}</td>
+            <td id="columna-3">${pasmuseum[2]}%</td>
         </tr>
         <tr>
-            <td>${pascinema[0]}</td>
-            <td>$ ${pascinema[1]}</td>
-            <td>${pascinema[2]}%</td>
+            <td id="columna-1">${pascinema[0]}</td>
+            <td id="columna-2">$ ${pascinema[1]}</td>
+            <td id="columna-3">${pascinema[2]}%</td>
         </tr>
     </tbody>
     `;
