@@ -215,6 +215,8 @@
 
 .card-title {
   text-align: center;
+  text-shadow: 3px 2px 2px rgb(0 0 0 / 19%);
+  color: #c34f91;
 }
 
 .text-center {
