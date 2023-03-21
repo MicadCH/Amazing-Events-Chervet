@@ -1,15 +1,37 @@
-const queryString = location.search
+const queryString = location.search;
+
 const params = new URLSearchParams(queryString);
+
 const id = params.get("id");
 
-console.log(id);
+const urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 
-let detallesEvento = eventos.events.find((event) => event._id == id);
-console.log(detallesEvento);
+let datosEventos;
+let currentDate;
 
-const divDetails = document.getElementById("divDetails");
+async function traerLosDatos() {
+  try {
+    const eventos = await fetch(urlApi)
+      .then((response) => response.json())
+      .then((data) => data);
 
-divDetails.innerHTML = ` <div class="row d-flex align-items-center">
+    datosEventos = eventos.events;
+    datosFecha = eventos.currentDate;
+    detailsInitializer();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+traerLosDatos();
+
+function detailsInitializer() {
+  const detallesEvento = datosEventos.find((event) => event._id == id);
+  createCard();
+  function createCard() {
+    const divDetails = document.getElementById("divDetails");
+
+    card = ` <div class="row d-flex align-items-center">
                             <div class="col-md-6 d-flex justify-content-center">
                                 <figure class="figure">
                                     <img src=${detallesEvento.image} class="figure-img img-detail img-fluid rounded" alt="default image">
@@ -30,3 +52,6 @@ divDetails.innerHTML = ` <div class="row d-flex align-items-center">
                                 </div>                                
                             </div>
                         </div>`;
+    divDetails.innerHTML = card;
+  }
+}

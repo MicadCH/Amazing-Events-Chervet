@@ -1,76 +1,103 @@
-const fechaBase = eventos.currentDate;
-let dataInput = "";
+// const fechaBase = eventos.currentDate;
+// let dataInput = "";
+// let arrayUpcoming = [];
+// let datosEventos = eventos.events;
+// let datosFecha = eventos.currentDate;
+
+const urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+
+let datosEventos;
+let currentDate;
 let arrayUpcoming = [];
-let datosEventos = eventos.events;
-let datosFecha = eventos.currentDate;
 
-const categoriasCheck = document.getElementById("container-check");
-const searchbar = document.getElementById("buscador");
-const categorysfilter = datosEventos.map((eventos) => eventos.category);
-const galeria = document.getElementById("galeria");
-const category = categorysfilter.reduce((c, e) => {
-  if (!c.includes(e)) {
-    c.push(e);
-  }
-  return c;
-}, []);
+async function traerLosDatos() {
+  try {
+    const eventos = await fetch(urlApi)
+      .then((response) => response.json())
+      .then((data) => data);
 
-function crearCategorias(evento) {
-  let eventoCategoria = "";
-  for (x of evento) {
-    eventoCategoria += `  <label class="label">
-    <input class="input" type="checkbox" name="${x}" id="${x}" value="${x}">${x}</label>`;
+    datosEventos = eventos.events;
+    datosFecha = eventos.currentDate;
+    upcomingEventsInicializador();
+  } catch (error) {
+    console.log(error);
   }
-  categoriasCheck.innerHTML = eventoCategoria;
 }
-crearCategorias(category);
 
-let almacenaCheck = [];
+traerLosDatos();
 
-categoriasCheck.addEventListener("click", (e) => {
-  if (e.target.checked) {
-    almacenaCheck.push(e.target.value);
-  } else {
-    almacenaCheck = almacenaCheck.filter(
-      (noCheckeado) => noCheckeado !== e.target.value
-    );
-  }
+function upcomingEventsInicializador() {
+  const categoriasCheck = document.getElementById("container-check");
 
-  render();
-});
+  const searchbar = document.getElementById("buscador");
 
-/// funcion curzada
+  const categorysfilter = datosEventos.map((eventos) => eventos.category);
 
-/// barra busqueda
+  const galeria = document.getElementById("galeria");
 
-let escucha = "";
-searchbar.addEventListener("keyup", (s) => {
-  escucha = s.target.value.toLowerCase();
-  render();
-});
-
-//muestra las cartas
-
-function upcoming() {
-  for (let i of datosEventos) {
-    if (i.date > fechaBase) {
-      arrayUpcoming.push(i);
+  const category = categorysfilter.reduce((c, e) => {
+    if (!c.includes(e)) {
+      c.push(e);
     }
+    return c;
+  }, []);
+
+  function crearCategorias(evento) {
+    let eventoCategoria = "";
+    for (x of evento) {
+      eventoCategoria += `  <label class="label">
+    <input class="input" type="checkbox" name="${x}" id="${x}" value="${x}">${x}</label>`;
+    }
+    categoriasCheck.innerHTML = eventoCategoria;
   }
-  return arrayUpcoming;
-}
-upcoming();
+  crearCategorias(category);
 
-function createcardsUpcoming(array) {
-  upcomingEvents = array.filter((e) => e.date > datosFecha);
+  let almacenaCheck = [];
 
-  console.log(upcomingEvents);
-  console.log(array.date);
-  console.log(datosFecha);
+  categoriasCheck.addEventListener("click", (e) => {
+    if (e.target.checked) {
+      almacenaCheck.push(e.target.value);
+    } else {
+      almacenaCheck = almacenaCheck.filter(
+        (noCheckeado) => noCheckeado !== e.target.value
+      );
+    }
 
-  let cadena = "";
-  for (let uno of upcomingEvents) {
-    cadena += `<div class="col-12 col-md-5 col-lg-3 card" >
+    render();
+  });
+
+  /// funcion curzada
+
+  /// barra busqueda
+
+  let escucha = "";
+  searchbar.addEventListener("keyup", (s) => {
+    escucha = s.target.value.toLowerCase();
+    render();
+  });
+
+  //muestra las cartas
+
+  function upcoming() {
+    for (let i of datosEventos) {
+      if (i.date > datosFecha) {
+        arrayUpcoming.push(i);
+      }
+    }
+    return arrayUpcoming;
+  }
+  upcoming();
+
+  function createcardsUpcoming(array) {
+    upcomingEvents = array.filter((e) => e.date > datosFecha);
+
+    console.log(upcomingEvents);
+    console.log(array.date);
+    console.log(datosFecha);
+
+    let cadena = "";
+    for (let uno of upcomingEvents) {
+      cadena += `<div class="col-12 col-md-5 col-lg-3 card" >
                         <div class="card-header">
                             <img src="${uno.image}" class="card-img-top" alt="${uno.name}">
                         </div>
@@ -83,37 +110,38 @@ function createcardsUpcoming(array) {
                             <a href="./details.html?id=${uno._id}" class="btn btn-outline-secondary btn-card">Details</a>
                         </div>
                 </div>`;
+    }
+    return cadena;
   }
-  return cadena;
-}
 
-function render() {
-  let filtradorCheck = datosEventos.filter((c) =>
-    almacenaCheck.includes(c.category)
-  );
-
-  let filtroBusqueda = datosEventos.filter(
-    (s) =>
-      s.category.toLowerCase().includes(escucha) ||
-      s.name.toLocaleLowerCase().includes(escucha)
-  );
-
-  if (filtroBusqueda.length > 0) {
-    galeria.innerHTML = createcardsUpcoming(filtroBusqueda);
-    let controlador = filtroBusqueda.filter((fb) =>
-      fb.category.includes(almacenaCheck.toString())
+  function render() {
+    let filtradorCheck = datosEventos.filter((c) =>
+      almacenaCheck.includes(c.category)
     );
-    galeria.innerHTML = createcardsUpcoming(controlador);
-  } else if (filtroBusqueda.length === 0) {
-    galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
-  }
-  if (filtradorCheck.length > 0) {
-    galeria.innerHTML = createcardsUpcoming(filtradorCheck);
-    let cfinal = filtradorCheck.filter((fc) =>
-      fc.name.toLowerCase().includes(escucha.toString())
+
+    let filtroBusqueda = datosEventos.filter(
+      (s) =>
+        s.category.toLowerCase().includes(escucha) ||
+        s.name.toLocaleLowerCase().includes(escucha)
     );
-    galeria.innerHTML = createcardsUpcoming(cfinal);
+
+    if (filtroBusqueda.length > 0) {
+      galeria.innerHTML = createcardsUpcoming(filtroBusqueda);
+      let controlador = filtroBusqueda.filter((fb) =>
+        fb.category.includes(almacenaCheck.toString())
+      );
+      galeria.innerHTML = createcardsUpcoming(controlador);
+    } else if (filtroBusqueda.length === 0) {
+      galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
+    }
+    if (filtradorCheck.length > 0) {
+      galeria.innerHTML = createcardsUpcoming(filtradorCheck);
+      let cfinal = filtradorCheck.filter((fc) =>
+        fc.name.toLowerCase().includes(escucha.toString())
+      );
+      galeria.innerHTML = createcardsUpcoming(cfinal);
+    }
   }
+  createcardsUpcoming(datosEventos);
+  render();
 }
-createcardsUpcoming(datosEventos);
-render();
