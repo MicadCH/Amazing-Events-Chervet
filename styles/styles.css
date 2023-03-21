@@ -43,6 +43,8 @@
   transform: scale(90%);
 }
 
+
+
 /*---------------------------- BOTON ACTIVO ---------------------------- */
 .btn-check:checked + .btn,
 .btn.active,
@@ -308,3 +310,22 @@
   -webkit-text-stroke-width: thin;
   -webkit-text-stroke-color: rgb(168, 77, 141);
 }
+
+/*--------------MENU HAMBURGUESA---------------*/
+
+.navbar-toggle {
+  border: none;
+  background: transparent;
+  padding: 15px 0;
+  float: right;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px auto;
+  border-radius: 1px;
+  background-color: #fff;
+}
+

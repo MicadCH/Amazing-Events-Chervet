@@ -5,10 +5,39 @@
   }
 }
 
+@media (max-width: 1169px) {
+  .navbar, .logo-nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1169px) {
+ .primerLogo {
+ text-align: center;
+ margin-bottom: 0.5%;
+  }
+}
+
+@media (max-width: 518px) {
+  .container-nav {
+    margin-right: 2%;
+    margin-left: 2%;
+   }
+ }
+
+ @media (max-width: 518px) {
+  .btn-nav,
+  .btn-nav2{
+    margin-top: 1%;
+    margin-bottom: 1%;;
+   }
+ }
+
+
 /*---------- BUSCAR ----------*/
 @media screen and (max-width: 1500px) {
   .buscar {
-    margin-top: -4.5%;
+    margin-top: -5.5%;
   }
   .form-inline {
     width: 30%;
@@ -16,10 +45,12 @@
 }
 @media screen and (max-width: 1000px) {
   .buscar {
-    margin-top: -6.5%;
+    margin-top: 1.5%;
+    display: flex;
+    justify-content: center;
   }
   .form-inline {
-    width: 30%;
+    width: 50%;
   }
 }
 @media screen and (max-width: 800px) {
