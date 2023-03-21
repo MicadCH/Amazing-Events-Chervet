@@ -2,12 +2,12 @@ const url = "https://mindhub-xj03.onrender.com/api/amazing";
 fetch(url)
   .then((response) => response.json())
   .then((dato) => {
+
     const events = dato.events;
+
     const currentDate = dato.currentDate;
 
-    const asistPorcentaje = events
-      .filter((ev) => ev.assistance !== undefined)
-      .map((ev) => {
+    const asistPorcentaje = events.filter((ev) => ev.assistance !== undefined).map((ev) => {
         return {
           name: ev.name,
           assistance: ev.assistance,
@@ -16,16 +16,15 @@ fetch(url)
         };
       });
 
-    const asistOrder = asistPorcentaje
-      .sort((a, b) => b.percentage - a.percentage)
-      .map((ev) => {
+    const asistOrder = asistPorcentaje.sort((a, b) => b.percentage - a.percentage).map((ev) => {
         return `${ev.name}: ${ev.percentage}%`;
       });
+
     const latestEvents = asistOrder.slice(-3);
+
     const pastCap = events.filter((ev) => ev.date < currentDate);
-    const capacityOrder = pastCap
-      .sort((a, b) => b.capacity - a.capacity)
-      .map((ev) => {
+
+    const capacityOrder = pastCap.sort((a, b) => b.capacity - a.capacity).map((ev) => {
         return `${ev.name}: ${ev.capacity}`;
       });
 

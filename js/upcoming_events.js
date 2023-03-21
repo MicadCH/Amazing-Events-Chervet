@@ -1,9 +1,3 @@
-// const fechaBase = eventos.currentDate;
-// let dataInput = "";
-// let arrayUpcoming = [];
-// let datosEventos = eventos.events;
-// let datosFecha = eventos.currentDate;
-
 const urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 
 let datosEventos;
@@ -34,6 +28,10 @@ function upcomingEventsInicializador() {
   const categorysfilter = datosEventos.map((eventos) => eventos.category);
 
   const galeria = document.getElementById("galeria");
+
+  let notFound = `<div class="img-error-texto" style="display: grid; text-align: center;">
+  <img src="./assets/error-404.png" class="img-404" alt="">
+  <span>Sorry, we couldn't find what you were looking for.</span></div>`;
 
   const category = categorysfilter.reduce((c, e) => {
     if (!c.includes(e)) {
@@ -111,7 +109,7 @@ function upcomingEventsInicializador() {
                         </div>
                 </div>`;
     }
-    return cadena;
+    return cadena == "" ? notFound : cadena;
   }
 
   function render() {
@@ -132,7 +130,10 @@ function upcomingEventsInicializador() {
       );
       galeria.innerHTML = createcardsUpcoming(controlador);
     } else if (filtroBusqueda.length === 0) {
-      galeria.innerHTML = `<img src="./assets/error-404.png" class="img-404" alt="">`;
+      galeria.innerHTML =
+      `<div class="img-error-texto" style="display: grid; text-align: center;">
+      <img src="./assets/error-404.png" class="img-404" alt="">
+      <span>Sorry, we couldn't find what you were looking for.</span></div>`;
     }
     if (filtradorCheck.length > 0) {
       galeria.innerHTML = createcardsUpcoming(filtradorCheck);
